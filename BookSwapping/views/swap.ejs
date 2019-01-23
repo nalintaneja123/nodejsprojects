@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Swap</title>
+
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<% if(flag ==1) { %>
+
+    <main class="rightblock">
+
+        <div>
+
+            <ul class="breadcrumbForSwapThisItem">
+
+                <h2>Swap this item</h2>
+
+            </ul>
+
+
+        </div>
+
+
+        <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+        <form action="/item" method="post">
+            <div class="divForDescriptionofBook">
+
+
+                <div>
+
+                    <p id="itemswap">Select an Item from your available swaps</p>
+
+                    <table id="tableForSwap">
+
+                        <% if(list != 0) { %>
+
+                            <tr>
+                                <td><input type="radio" name="swapitem" value="<%= list[0].ItemName %>"
+                                           checked="checked"><label
+                                            for="Book1"><a
+                                                href="#"><%= list[0].ItemName %></a></label></td>
+
+                            </tr>
+
+                            <% for (var i = 1;i < list.length;i++) { %>
+
+                                <tr>
+                                    <td><input type="radio" name="swapitem" value="<%= list[i].ItemName %>"><label
+                                                for="Book1"><a
+                                                    href="#"><%= list[i].ItemName %></a></label></td>
+
+                                </tr>
+
+                            <% } %>
+
+                        <% } else { %>
+
+                            <tr>
+                                <td>No Item available For swap</td>
+
+                            </tr>
+
+                        <% } %>
+
+                    </table>
+
+                </div>
+
+                <div class="confirmSwapButtonDiv">
+                    <button class="buttonForConfirmSwap" type="submit" value="swapitem" name="ConfirmSwap">Confirm Swap
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+
+    </main>
+
+<% } else { %>
+
+    <main class="rightblock">
+
+        <div>
+
+            <ul class="breadcrumbForSwapThisItem">
+
+                <h2>Swap this item</h2>
+
+            </ul>
+
+
+        </div>
+
+
+        <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+        <form action="/item" method="post">
+            <div class="divForDescriptionofBook">
+
+
+                <div>
+
+                    <p id="itemswap">Select an Item from your available swaps</p>
+
+                    <table id="tableForSwap">
+
+                        <% if(list != 0) { %>
+
+                            <tr>
+                                <td><input type="radio" name="swapitem" value="<%= list[0].ItemName %>"
+                                           checked="checked"><label
+                                            for="Book1"><a
+                                                href="#"><%= list[0].ItemName %></a></label></td>
+
+                            </tr>
+
+                            <% for (var i = 1;i < list.length;i++) { %>
+
+                                <tr>
+                                    <td><input type="radio" name="swapitem" value="<%= list[i].ItemName %>"><label
+                                                for="Book1"><a
+                                                    href="#"><%= list[i].ItemName %></a></label></td>
+
+                                </tr>
+
+                            <% } %>
+
+                        <% } else { %>
+
+                            <tr>
+                                <td>No Item available For swap</td>
+
+                            </tr>
+
+                        <% } %>
+
+                    </table>
+
+                </div>
+
+                <div class="confirmSwapButtonDiv">
+                    <button class="buttonForConfirmSwap" type="submit" value="swapitem" name="ConfirmSwap">Confirm Swap
+                    </button>
+                </div>
+
+                <label for="validationmessage" style="font-size: small">Item successfully swapped...Please perform a <a href="/feedback">feedback</a></label>
+
+            </div>
+
+        </form>
+
+
+    </main>
+
+
+<% } %>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

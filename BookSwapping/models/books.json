@@ -1,0 +1,98 @@
+{
+  "books": [{
+    "ItemCode": "IT001",
+    "ItemName": "The Great GatsBy",
+    "CatalogCategoryCode": "C001",
+    "Description": "The Great Gatsby is a 1925 novel written by American author F. Scott Fitzgerald that follows a cast of characters living in the fictional towns of West  Egg and East Egg on prosperous Long Island in the summer  of 1922. The story primarily concerns the young and mysterious millionaire Jay Gatsby and his quixotic passion and obsession with the beautiful former debutante Daisy Buchanan. Considered to be Fitzgerald's magnum opus, The Great Gatsby explores themes of decadence, idealism, resistance to change, social upheaval, and excess, creating a portrait of the Roaring Twenties that has been described as a cautionary tale regarding the American Dream",
+    "Author": "F. Scott Fitzgerald",
+    "Rating": "5",
+    "ImageURL": "../resources/GreatGatsby.jpg"
+  },
+
+
+    {
+      "ItemCode": "IT002",
+      "ItemName": "Moby Dick",
+      "CatalogCategoryCode": "C001",
+      "Author": "Herman Melville",
+      "Description": "Moby-Dick; or, The Whale is  an 1851 novel by American writer Herman Melville. The book is sailor Ishmael's narrative of the obsessive quest of Ahab, captain of the whaling ship Pequod, for revenge on Moby Dick, the white whale that on the ship's previous voyage bit off Ahab's leg at the knee. A contribution to the literature of the American Renaissance, the work's genre classifications range from late Romantic to early Symbolist. Moby-Dick was published to mixed reviews, was a commercial failure, and was out of print at the time of the author's death in 1891. Its reputation as a Great American Novel was established only in the 20th century, after the centennial of its author's birth. William Faulkner confessed he wished he had written the book himself,and D. H. Lawrence called it one of the strangest and most wonderful books in the world  and the greatest book of the sea ever written",
+      "Rating": "5",
+      "ImageURL": "../resources/MobyDick.jpg"
+    },
+
+    {
+      "ItemCode": "IT003",
+      "ItemName": "Enders Game",
+      "CatalogCategoryCode": "C002",
+      "Author": "Orson Scott Card",
+      "Description": "Ender's Game is a 1985 military science fiction novel by American author Orson Scott Card. Set at an unspecified date in Earth's future, the novel presents an imperiled mankind after two conflicts with the Formics, an insectoid alien species which they dub the buggers. In preparation for an anticipated third invasion, children, including the novel's protagonist, Andrew Ender Wiggin, are trained from a very young age through increasingly difficult games including some in zero gravity, where Ender's tactical genius is revealed.",
+      "Rating": "5",
+      "ImageURL": "../resources/endersgame.jpg"
+    },
+
+    {
+      "ItemCode": "IT004",
+      "ItemName": "Pride and Prejudice",
+      "CatalogCategoryCode": "C001",
+      "Author": "Jane Austen",
+      "Description": "Pride and Prejudice is an 1813 romantic novel by Jane Austen. It charts the emotional development of protagonist Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential. The comedy of the writing lies in the depiction of manners, education, marriage, and money during the British Regency period.",
+      "Rating": "6",
+      "ImageURL": "../resources/PrideAndPrejudice.jpg"
+    },
+
+    {
+      "ItemCode": "IT005",
+      "ItemName": "Hamlet",
+      "CatalogCategoryCode": "C001",
+      "Author": "William Shakespeare",
+      "Description": "The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy written by William Shakespeare at an uncertain date between 1599 and 1602. Set in Denmark, the play dramatises the revenge Prince Hamlet is called to wreak upon his uncle, Claudius, by the ghost of Hamlet's father, King Hamlet. Claudius had murdered his own brother and seized the throne, also marrying his deceased brother's widow.",
+      "Rating": "6",
+      "ImageURL": "../resources/hamlet.jpg"
+    },
+
+    {
+
+      "ItemCode":"IT006",
+      "ItemName":"To Kill a Mockingbird",
+      "CatalogCategoryCode": "C001",
+      "Author":"Harper Lee",
+      "Description":"To Kill a Mockingbird is a novel by Harper Lee published in 1960. It was immediately successful, winning the Pulitzer Prize, and has become a classic of modern American literature. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was 10 years old. The story is told by the six-year-old Jean Louise Finch",
+      "Rating":7,
+      "ImageURL":"../resources/To_Kill_a_Mockingbird.JPG"
+
+    },
+
+    {
+      "ItemCode":"IT007",
+      "ItemName":"War of the Worlds",
+      "CatalogCategoryCode": "C002",
+      "Author":"H. G. Wells",
+      "Description":"The War of the Worlds is a science fiction novel by English author H. G. Wells first serialised in 1897 by Pearson's Magazine in the UK and by Cosmopolitan magazine in the US. The novel's first appearance in hardcover was in 1898 from publisher William Heinemann of London. Written between 1895 and 1897,it is one of the earliest stories to detail a conflict between mankind and an extraterrestrial race",
+      "Rating":7,
+      "ImageURL":"../resources/waroftheworlds.jpg"
+    },
+
+    {
+      "ItemCode":"IT008",
+      "ItemName":"Hunger Games",
+      "CatalogCategoryCode": "C002",
+      "Author":"Suzanne Collins",
+      "Description":"The Hunger Games is a trilogy of young adult dystopian novels written by American novelist Suzanne Collins. The series is set in The Hunger Games universe, and follows young characters Katniss Everdeen and Peeta Mellark",
+      "Rating":7,
+      "ImageURL":"../resources/HungerGames.jpg"
+    }
+
+  ],
+
+  "categories": [{
+    "categoryCode": "C001",
+    "categoryName": "Literature"
+  },
+
+    {
+      "categoryCode": "C002",
+      "categoryName": "ScienceFiction"
+    }
+
+  ]
+}

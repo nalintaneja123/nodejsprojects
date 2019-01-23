@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "Userid": "US001",
+      "FirstName": "TestFirstName1",
+      "LastName": "TestLastName1",
+      "EmailAddress": "TestFirstName1@gmail.com",
+      "Address1": "TestAddress1",
+      "Address2": "TestAddress2",
+      "City": "TestCity1",
+      "State": "TestState1",
+      "PostalCode": "TestPostalCode1",
+      "Country": "TestCountry1"
+    },
+    {
+      "Userid": "US002",
+      "FirstName": "TestFirstName2",
+      "LastName": "TestLastName2",
+      "EmailAddress": "TestFirstName2@gmail.com",
+      "Address1": "TestAddress2",
+      "Address2": "TestAddress2",
+      "City": "TestCity2",
+      "State": "TestState2",
+      "PostalCode": "TestPostalCode2",
+      "Country": "TestCountry2"
+    },
+    {
+      "Userid": "US003",
+      "FirstName": "TestFirstName3",
+      "LastName": "TestLastName3",
+      "EmailAddress": "TestFirstName3@gmail.com",
+      "Address1": "TestAddress3",
+      "Address2": "TestAddress2",
+      "City": "TestCity3",
+      "State": "TestState3",
+      "PostalCode": "TestPostalCode3",
+      "Country": "TestCountry3"
+    }
+  ],
+  "useritem": [
+    {
+      "UserID": "US001",
+      "item": "The Great GatsBy",
+      "Rating": "***",
+      "status": "swapped",
+      "swapitem": "Book1",
+      "swapItemRating": "",
+      "swapperRating": ""
+    },
+    {
+      "UserID": "US001",
+      "item": "Hunger Games",
+      "Rating": "*****",
+      "status": "pending",
+      "swapitem": "Hamlet",
+      "swapItemRating": "",
+      "swapperRating": ""
+    },
+    {
+      "UserID": "US001",
+      "item": "War of the Worlds",
+      "Rating": "****",
+      "status": "available",
+      "swapitem": "Book3",
+      "swapItemRating": "",
+      "swapperRating": ""
+    },
+
+    {
+      "UserID": "US001",
+      "item": "To Kill a Mockingbird",
+      "Rating": "**",
+      "status": "swapped",
+      "swapitem": "Book4",
+      "swapItemRating": "",
+      "swapperRating": ""
+    },
+
+    {
+      "UserID": "US002",
+      "item": "Book4",
+      "Rating": "4",
+      "status": "pending",
+      "swapitem": "BookNN",
+      "swapItemRating": "",
+      "swapperRating": ""
+    }
+  ],
+  "userProfile": [
+    {
+      "UserID": "US001",
+      "userItems": [
+        "The Great GatsBy",
+        "Hunger Games",
+        "War of the Worlds",
+        "To Kill a Mockingbird"
+      ]
+    },
+    {
+      "UserID": "US002",
+      "userItems": [
+        "Book4",
+        "Book5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<form action="/login" method="post">
+    <main class="rightblock">
+
+
+
+        <%if(flag===1){%>
+
+        <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+        <p id="paragraph2">
+
+
+            <label for="email">EmailID:</label><input type="text" size="40" name="email"/><br/>
+            <label for="password">Password:</label><input type="password" size="40" name="password"/><br/>
+            <button type="submit" class="buttonForConfirmSwap" value="login">Sign in</button>
+            <br/>
+
+            <% if(errors != null) { %>
+                <% for(var i = 0;i < errors.length;i++){ %>
+                    <label for="validationmessage" style="font-size: small"><%= errors[i].msg %></label>
+                    <br/><br/>
+                <% } %>
+            <% } %>
+            Dont have an account?<u><a href="/register">Register</a></u>
+
+
+
+
+
+        </p>
+
+        <%} else if(flag===2) {%>
+
+
+            <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+            <p id="paragraph2">
+
+
+                <label for="email">EmailID:</label><input type="text" size="40" name="email"/><br/>
+                <label for="password">Password:</label><input type="password" size="40" name="password"/><br/>
+                <button type="submit" class="buttonForConfirmSwap" value="login">Sign in</button>
+                <br/>
+
+                <label for="validationmessage" style="font-size: small">Either Email or Password is wrong</label>
+                        <br/><br/>
+
+                Dont have an account?<u><a href="/register">Register</a></u>
+
+
+
+
+
+            </p>
+
+        <%}%>
+
+
+    </main>
+</form>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

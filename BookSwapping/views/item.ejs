@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Item</title>
+
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<main class="rightblock">
+
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/Categories">Categories</a></li>
+            <li><a href="/item">Item</a></li>
+        </ul>
+    </div>
+    <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+    <form action="/item" method="post">
+        <div class="divForDescriptionofBook">
+
+            <!--<a href="/Categories"> -->
+                <button class="buttonForGoingBacktoCategoryPage" type="submit" name="GoBacktoCategory"
+                        value="Go Back to Category Page">Go back to Category Page</button>
+
+
+            <img id="itemImage" src="<%= qs[0].ImageURL %>" alt="greatgatsbyimage"/>
+
+            <% for(var j = 0;j < qscategory.length;j++) { %>
+
+                <% if(qs[0].CatalogCategoryCode == qscategory[j].categoryCode) { %>
+
+                    <p id="p1">
+                        <% qs[0].ItemName %>
+                        <br/>By <%= qs[0].Author %><br/>Category:<%= qscategory[j].categoryName %></p>
+
+                    <% if(itemdescription != null) { %>
+
+                        <button id="button1" type="submit" name="Swapit" value="<%= itemdescription.item %>"/>Swap
+                        it</button><br/>
+
+                    <% } else { %>
+
+                        <button id="button1" type="submit" name="Swapit" value="Swap it"/>Swap
+                        it</button><br/>
+
+                    <% } %>
+
+
+                    <button id="button2" type="submit" name="Rateit" value="Rateit"/>Rate it</button><br/>
+                    <br/>
+                    <br/>
+
+                    <p id="p2"><%= qs[0].Description %></p>
+
+        </div>
+
+    </form>
+</main>
+
+<% } %>
+<% } %>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

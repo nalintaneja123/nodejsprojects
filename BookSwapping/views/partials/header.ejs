@@ -1,0 +1,182 @@
+<html>
+<header>
+
+
+    <p id="mainHeading"><br/>Book Swap</p>
+    <img id="imageForHeader" src="../resources/book-swap.jpg" alt="book-swap"/>
+
+    <% if(req.url == '/login') { %>
+
+        <ul class="breadcrumbForMyItems">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/login">Sign In</a></li>
+
+
+        </ul>
+
+        <script type="application/javascript">
+            document.getElementById('notsignedin').style.visibility = "hidden";
+
+        </script>
+
+    <% }else if(req.url == "/Categories") { %>
+
+        <% if(user != 1) { %>>
+
+        <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+        <script type="application/javascript">
+            document.getElementById('notsignedin').style.visibility = "hidden";
+
+        </script>
+        <% } else { %>
+
+            <p id="notsignedin" class="usersignin">Not Signed in</p>
+
+        <% } %>
+
+    <% } else if(req.url == "/index") { %>
+
+        <% if(user != null) { %>
+
+            <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+            <script type="application/javascript">
+                document.getElementById('notsignedin').style.visibility = "hidden";
+
+            </script>
+        <% } else { %>
+
+            <p id="notsignedin" class="usersignin">Not Signed in</p>
+        <% } %>
+
+    <% }else if(req.url == '/mySwaps') { %>
+
+        <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+        <script type="application/javascript">
+            document.getElementById('notsignedin').style.visibility = "hidden";
+
+        </script>
+
+    <% }else if(req.url == "/myItems" || req.url == "/myitems" || req.url == "/swap" || req.url == "/myswaps")  { %>
+
+
+        <% if(req.url == "/myItems") { %>
+
+            <% if(user != null) { %>
+
+                <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+                <script type="application/javascript">
+                    document.getElementById('notsignedin').style.visibility = "hidden";
+
+                </script>
+            <% } else { %>
+                <p id="notsignedin" class="usersignin">Not Signed in</p>
+
+            <% } %>
+        <% } else if(req.url == '/mySwaps' || req.url == '/myswaps') { %>
+
+            <% if(user != null) { %>
+
+                <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+                <script type="application/javascript">
+                    document.getElementById('notsignedin').style.visibility = "hidden";
+
+                </script>
+            <% }else { %>
+                <p id="notsignedin" class="usersignin">Not Signed in</p>
+
+            <% } %>
+
+
+        <% } else if(req.url == "/swap") { %>
+
+            <p>gkgjfkgfjkgjf</p>
+
+            <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+            <script type="application/javascript">
+                document.getElementById('notsignedin').style.visibility = "hidden";
+
+            </script>
+
+        <% } %>
+
+        <ul class="breadcrumbForMyItems">
+            <li><a href="/index">Home</a></li>
+
+            <% if(req.url == "/swap") { %>
+
+                <li><a href="#">SwapBooks</a></li>
+
+            <% } else { %>
+
+                <li><a href="#">MyBooks</a></li>
+
+            <% } %>
+
+        </ul>
+
+    <% } else if(req.url == '/item?itemcode=' + itemcode) { %>
+
+        <% if(user != null ) { %>
+
+            <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+
+            <script type="application/javascript">
+                document.getElementById('notsignedin').style.visibility = "hidden";
+            </script>
+
+        <% } else { %>
+
+            <p id="notsignedin" class="usersignin">Not Signed in</p>
+        <% } %>
+
+    <% }else if(req.url == '/Categories?categoryname=' + nameofcategory) { %>
+
+
+        <% if(user != 1 ) { %>
+
+            <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+
+            <script type="application/javascript">
+                document.getElementById('notsignedin').style.visibility = "hidden";
+            </script>
+
+        <% } else { %>
+
+            <p id="notsignedin" class="usersignin">Not Signed in</p>
+        <% } %>
+
+    <% }else if(req.url=='/about' || req.url=='/contact') { %>
+
+        <% if(user != 1 ) { %>
+
+            <p id="welcomeuser" class="usersignin">Welcome <%= user %></p>
+
+
+            <script type="application/javascript">
+                document.getElementById('notsignedin').style.visibility = "hidden";
+            </script>
+
+        <% } else { %>
+
+            <p id="notsignedin" class="usersignin">Not Signed in</p>
+        <% } %>
+
+
+    <%} else{ %>
+
+
+        <p id="notsignedin" class="usersignin">Not Signed in</p>
+
+    <% } %>
+
+</header>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<form action="/register" method="post">
+    <main class="rightblock">
+
+        <% if(flag == 2) { %>
+
+        <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+        <p id="paragraph2">
+
+
+            <label for="email">EmailID:</label><input type="text" size="40" name="email" value="<%= email %>"/><br/>
+            <label for="password">Password:</label><input type="password" size="40" name="password"
+                                                          value="<%= password %>"/><br/>
+            <label for="userid">UserID:</label><input type="text" size="40" name="userid" value="<%= userid %>"/><br/>
+            <button type="submit" class="buttonForConfirmSwap" value="Register">Register</button>
+
+
+            <label for="validationmessage" style="font-size: small">User is already present</label>
+            <br/><br/>
+            <br/>
+
+            <% } else if(flag == 3) { %>
+
+
+                <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+        <p id="paragraph2">
+
+
+            <label for="email">EmailID:</label><input type="text" size="40" name="email"/><br/>
+            <label for="password">Password:</label><input type="password" size="40" name="password"/><br/>
+            <label for="userid">UserID:</label><input type="text" size="40" name="userid"/><br/>
+            <button type="submit" class="buttonForConfirmSwap" value="Register">Register</button>
+
+            <label for="validationmessage" style="font-size: small">User successfully inserted</label>
+            <br/>
+
+            <% }else { %>
+                    <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+            <p id="paragraph2">
+
+
+                    <label for="email">EmailID:</label><input type="text" size="40" name="email"/><br/>
+                    <label for="password">Password:</label><input type="password" size="40" name="password"/><br/>
+                    <label for="userid">UserID:</label><input type="text" size="40" name="userid"/><br/>
+                    <button type="submit" class="buttonForConfirmSwap" value="Register">Register</button>
+
+                <% if(errors != null) { %>
+                    <% for(var i = 0;i < errors.length;i++){ %>
+                        <label for="validationmessage" style="font-size: small"><%= errors[i].msg %></label>
+                        <br/><br/>
+                    <% } %>
+                <% } %>
+
+
+                    <br/>
+
+            <% }  %>
+    </main>
+</form>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

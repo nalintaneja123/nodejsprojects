@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+
+</head>
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<main class="rightblock">
+    <div>
+        <ul class="breadcrumb">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/Categories">Categories</a></li>
+        </ul>
+    </div>
+    <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+    <div id="div1">
+
+        <% if( req.url == '/Categories') { %>
+
+
+            <% if(user != 1) { %>
+
+                <% for(var i = 0;i < categories.length;i++) { %>
+                    <p><%= categories[i].categoryName %> </p><br/>
+
+                    <% for(var j = 0;j < itemlist.length;j++) { %>
+                        <% if(categories[i].categoryCode == itemlist[j].CatalogCategoryCode) { %>
+
+
+                            <a href='<%= "item?itemcode=" + itemlist[j].ItemCode %>'><img class="image1"
+                                                                                          src="<%= itemlist[j].ImageURL %>"
+                                                                                          alt="book1"/></a>
+                        <% } %>
+                    <% } %>
+
+                <% } %>
+
+            <% } else { %>
+
+
+                <% for(var i = 0;i < categories.length;i++) { %>
+                    <p><%= categories[i].categoryName %> </p><br/>
+
+                    <% for(var j = 0;j < itemlist.length;j++) { %>
+                        <% if(categories[i].categoryCode == itemlist[j].CatalogCategoryCode) { %>
+
+
+                            <a href='<%= "item?itemcode=" + itemlist[j].ItemCode %>'><img class="image1"
+                                                                                          src="<%= itemlist[j].ImageURL %>"
+                                                                                          alt="book1"/></a>
+
+
+                        <% } %>
+                    <% } %>
+
+                <% } %>
+
+            <% } %>
+
+        <% } else if( req.url == '/signout') { %>
+
+
+            <% for(var i = 0;i < categories.length;i++) { %>
+                <p><%= categories[i].categoryName %> </p><br/>
+
+                <% for(var j = 0;j < itemlist.length;j++) { %>
+                    <% if(categories[i].categoryCode == itemlist[j].CatalogCategoryCode) { %>
+
+
+                        <a href='<%= "item?itemcode=" + itemlist[j].ItemCode %>'><img class="image1"
+                                                                                      src="<%= itemlist[j].ImageURL %>"
+                                                                                      alt="book1"/></a>
+
+
+                    <% } %>
+                <% } %>
+
+            <% } %>
+
+        <% } else if(req.url == '/Categories?categoryname=' + nameofcategory){ %>
+
+
+            <% if(user != 1) { %>
+
+
+                <p><%= nameofcategory %> </p><br/>
+
+
+                <% if(categoryCode != null) { %>
+
+                    <% for(var j = 0;j < itemlist.length;j++) { %>
+
+
+                        <% if(categoryCode == itemlist[j].CatalogCategoryCode) { %>
+
+
+                            <a href='<%= "item?itemcode=" + itemlist[j].ItemCode %>'><img class="image1"
+                                                                                          src="<%= itemlist[j].ImageURL %>"
+                                                                                          alt="book1"/></a>
+
+                        <% } %>
+
+                    <% } %>
+
+                <% }else { %>
+
+                    <p>Please enter a valid category</p>
+
+                <% } %>
+
+
+            <% } else { %>
+
+                <p><%= nameofcategory %> </p><br/>
+
+                <% if(categoryCode != null) { %>
+
+                    <% for(var j = 0;j < itemlist.length;j++) { %>
+
+
+
+                        <% if(categoryCode == itemlist[j].CatalogCategoryCode) { %>
+
+
+                            <a href='<%= "item?itemcode=" + itemlist[j].ItemCode %>'><img class="image1"
+                                                                                          src="<%= itemlist[j].ImageURL %>"
+                                                                                          alt="book1"/></a>
+                        <% } %>
+
+
+                    <% } %>
+
+                <% } else { %>
+
+                    <p>Please enter a valid category</p>
+                <% } %>
+
+
+            <% } %>
+
+        <% } %>
+
+    </div>
+
+</main>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

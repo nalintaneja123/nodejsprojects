@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Swap</title>
+
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+<body>
+
+<% include partials/header.ejs %>
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<main class="rightblock">
+
+
+    <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+    <div id="swapoffers">
+        <h2>Swap Offers available</h2>
+        <form action="/mySwaps" method="post">
+            <table id="swaptable">
+                <tr>
+                    <th>Book</th>
+                    <th>SwapOffer</th>
+                </tr>
+                <tr>
+
+                    <% if(swapitem != null) { %>
+                        <td><a href="#">
+                                <%= swapitem.item %>
+                            </a></td>
+                        <td><a href="#"><%= swapitem.swapitem %></a></td>
+                        <!--<td><a href="#"><input class="buttonForConfirmSwap" type="submit" value="Accept" id="btnAccept"/></a></td>-->
+
+                        <td>
+                            <button class="buttonForConfirmSwap" id="accept" type="submit"
+                                    value="<%= swapitem.item %>"
+                                    name="Accept">
+                                Accept
+                            </button>
+
+                        </td>
+                        <td>
+                            <button class="buttonForConfirmSwap" type="submit" value="<%= swapitem.item %>"
+                                    id="btnReject" name="Reject">Reject
+                            </button>
+                        </td>
+
+                        <td>
+                            <button class="buttonForConfirmSwap" type="submit"
+                                    value="<%= swapitem.item %>" name="WithrawSwap">Withraw Swap</button>
+                        </td>
+
+                    <% } else { %>
+
+
+                        <td colspan="2">No items to display</td>
+
+                    <% } %>
+                </tr>
+
+
+            </table>
+
+        </form>
+    </div>
+
+</main>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>

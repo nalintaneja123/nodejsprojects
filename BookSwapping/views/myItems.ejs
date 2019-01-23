@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>myItems</title>
+    <link rel="stylesheet" href="../resources/stylesheetForPage1.css" type="text/css"/>
+</head>
+<body>
+
+<% include partials/header.ejs %>
+
+<% include partials/section.ejs %>
+<% include partials/leftblock.ejs %>
+
+<main class="rightblock">
+
+    <img class="mainImageForBackground" src="../resources/swapping-books.jpg" alt="swappingbooks"/>
+
+    <div id="divForBookSwaps">
+        <h1>My Book Swaps</h1>
+        <br/>
+        <br/>
+        <br/><br/>
+
+        <form action="/myItems" method="post">
+            <table>
+                <tr>
+                    <th>Book</th>
+                    <th>Category</th>
+                    <th>My Rating</th>
+                    <th>Swapped</th>
+                </tr>
+
+                <% for(var i = 0;i < useritems.length;i++) { %>
+                    <tr>
+                        <td><a href="/item"><%= useritems[i].item %></a></td>
+
+                        <% for(var j = 0;j < allitems.length;j++) { %>
+
+                            <% if(useritems[i].item == allitems[j].ItemName) { %>
+
+                                <% for(var q = 0;q < allcategories.length;q++){ %>
+
+                                <% if(allitems[j].CatalogCategoryCode == allcategories[q].categoryCode) { %>
+
+                                    <td><%=allcategories[q].categoryName %></td>
+
+                                <% } %>
+                                <% } %>
+                            <% } %>
+                        <% } %>
+                        <td><%= useritems[i].Rating %></td>
+                        <td><%= useritems[i].status %></td>
+
+                        <td>
+                            <button class="buttonForConfirmSwap" type="submit"
+                                    name="Update" value="<%= useritems[i].item %>">Update
+                            </button>
+                        </td>
+                        <td>
+                            <button class="buttonForConfirmSwap" type="submit"
+                                    name="Delete" value="<%= useritems[i].item %>">Delete
+                            </button>
+                        </td>
+                    </tr>
+                <% } %>
+
+            </table>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+        <p id="legend">&nbsp;&nbsp;&#8646;Swap Offer Available&nbsp;&nbsp;&nbsp;&#10004;Already Swapped </p>
+
+
+    </div>
+</main>
+
+<% include partials/footer.ejs %>
+
+</body>
+</html>
